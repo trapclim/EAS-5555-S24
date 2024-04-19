@@ -25,4 +25,4 @@ We will add those lines to your `.profile` or `.bash_profile` files later, but f
 # Now let's get started. 
 1. First run `./get.loop.ope.csh`
 
-newline
+
