@@ -8,19 +8,14 @@ git clone https://github.com/trapclim/EAS-5555-S24.git
 cd ~/EAS-5555-S24/runwrf-derecho/getope
 ```
 
-2. Now you will need to change the ".csh" files into executables:
+2. If this is the first time you are running the updated `carrillo-code` you will need to run the bash script called `setup-code.sh` like this:
 ```
-chmod +x *.csh
-```
-
-# Every time you log in:
-1. include "." (your current directory) in `PATH`:
-```
-PATH=$PATH:.
-export PATH
+bash setup-ccode.sh
 ```
 
-We will add those lines to your `.profile` or `.bash_profile` files later, but for now, just remember to do it when you log in.
+# This will handle adding the `PATH=$PATH:.` and `export PATH` lines to your `.bashrc` and `.bash_profile` files.
+
+# The line above will also change the permissions of the `.csh` files to make them exexecutables.
 
 # Now let's get started. 
 1. First run `./get.loop.ope.csh`
