@@ -1,0 +1,7 @@
+echo $start"   "$stop
+
+#!/bin/bash
+
+start=`date +%Y-%m-%d_00:00:00`
+stop=`date --date='3 days' +%Y-%m-%d_00:00:00`
+echo $start"   "$stop > dates.txt
