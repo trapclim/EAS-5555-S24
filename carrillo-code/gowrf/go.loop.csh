@@ -12,8 +12,18 @@ endif
 setenv runcase $1 
 
 setenv OPATH0 /glade/derecho/scratch/${USER}/wrf-model/CFS-Rx_DATA_STORE
-setenv OPATHR /glade/derecho/scratch/${USER}/wrf-model/CFS-Rx_DATA 
-setenv Ndomains 1
+setenv OPATHR /glade/derecho/scratch/${USER}/wrf-model/CFS-Rx_DATA
+
+if ( !($?Ndomains) ) then
+
+   echo "Ndomains is being set to 1 by default (Ndomains not specified)"
+    setenv Ndomains 1
+else
+   echo "Ndomains set to: "$Ndomains
+   
+endif
+
+
 #----------active=1,inactive=0-----# 
 setenv cpcode 0
 setenv cpcode 1
