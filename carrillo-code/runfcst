@@ -1,0 +1,18 @@
+#!/bin/csh
+
+cd getreal/
+sh mk3dayFcstDates
+cp dates.txt ../gowrf/
+cd ../gowrf
+
+set user = `whoami`
+set now = `date +"%m-%d-%Y-%T"`
+
+if ( $#argv < 1 ) then
+    set runcase = $user-$now
+else
+    set runcase = $user-$1
+endif
+
+go.loop.csh $runcase
+
