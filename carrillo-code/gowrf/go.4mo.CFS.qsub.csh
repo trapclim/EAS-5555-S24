@@ -12,7 +12,7 @@ set getdata = $1
 set rmdata = 0 
 set geogrid = 0
 if ( $cpcode == 1 ) then
-     set geogrid = 0
+     set geogrid = 1
 endif 
 set ungrid =  1
 set ungridqsub = 1
