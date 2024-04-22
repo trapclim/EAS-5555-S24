@@ -2,8 +2,15 @@
 
 set PWD = `pwd`
 set USER = `whoami`
-#----------activation part---------# 
-setenv runcase "Hurr-Patr-2015-D3"
+#----------activation part---------#
+if ( $#argv < 1 ) then
+   echo "Too few arguments: required at least a casename"
+   echo "Try something like:"
+   echo ">> go.loop.csh MyCaseNow"
+   exit 1
+endif
+setenv runcase $1 
+
 setenv OPATH0 /glade/derecho/scratch/${USER}/wrf-model/CFS-Rx_DATA_STORE
 setenv OPATHR /glade/derecho/scratch/${USER}/wrf-model/CFS-Rx_DATA 
 setenv Ndomains 1
@@ -16,9 +23,12 @@ set odatesf = odates.now.txt
 rm -rf $odatesf
 #---
 #---
-set files = dates.loop.15dy.Jul.1985.txt
-set files = dates.loop.5dy.Oct.2015.txt
-set files = dates.loop.5dy.Oct.2016.txt
+set files = dates.txt
+echo  "Running "$runcase
+echo "with dates set in file '"$files"' ."
+echo "Dates are set as:"
+echo `cat $files`
+
 #--- 
 
 #echo "FILES: " $files 

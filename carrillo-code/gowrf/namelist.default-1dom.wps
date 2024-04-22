@@ -1,0 +1,44 @@
+&share
+ wrf_core = 'ARW',
+!max_dom = 3,
+ max_dom = 1,
+!start_date = '2018-10-01_00:00:00' 
+!end_date = '2018-10-10_18:00:00' 
+ start_date = 'START_DATE', 'START_DATE', 'START_DATE', 
+ end_date = 'END_DATE', 'END_DATE', 'END_DATE', 
+ interval_seconds = 21600
+ io_form_geogrid = 2,
+/
+
+&geogrid
+ parent_id         =   1,   1,  2,
+ parent_grid_ratio =   1,   3,  3,
+ i_parent_start    =   1, 127, 44,
+ j_parent_start    =   1,  45, 57,
+ dx = 30000,
+ dy = 30000,
+!e_we = 481,
+!e_sn = 222,
+ e_we = 210, 163, 223,   
+ e_sn = 104, 163, 169, 
+!ref_lat = 30.0,
+ ref_lat = 37.500,
+ ref_lon = -92.500,
+ truelat1 = 37.500,
+ truelat2 = 37.500,
+ stand_lon = -92.500,
+ map_proj = 'mercator',
+!geog_data_path = '/glade/p_old/work/wrfhelp/WPS_GEOG'
+ geog_data_path = '/glade/work/wrfhelp/WPS_GEOG'
+/
+
+&ungrib
+ out_format = 'WPS',
+ prefix = 'PREF_UNGRID',
+/
+
+&metgrid
+!fg_name = 'GFS', 
+ fg_name = 'PREF_1UNGRID','PREF_2UNGRID', 
+ io_form_metgrid = 2,
+/

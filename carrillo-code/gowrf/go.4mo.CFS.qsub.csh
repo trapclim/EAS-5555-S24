@@ -62,23 +62,18 @@ set ens = $6
 #----
 #----
 if( $Ndomains == 1 ) then 
-#   set namelistWPS = namelist.FRM-US.wps
-#   set namelistINPUT = namelist.FRM-US.input 
-    set namelistWPS = namelist.FRM-CA.wps
-    set namelistINPUT = namelist.FRM-CA.input 
+    set namelistWPS = namelist.default-1dom.wps
+    set namelistINPUT = namelist.default-1dom.input
 endif 
 
-if( $Ndomains == 2 ) then 
-#   set namelistWPS = namelist.FRM-US-NE.wps
-#   set namelistINPUT = namelist.FRM-US-NE.input 
-    set namelistWPS = namelist.FRM-CA-MX.wps
-    set namelistINPUT = namelist.FRM-CA-MX.input 
-endif 
-if( $Ndomains == 3 ) then 
-#   set namelistWPS = namelist.FRM-US-NE-NY.wps
-#   set namelistINPUT = namelist.FRM-US-NE-NY.input 
-    set namelistWPS = namelist.FRM-CA-MX-CO.wps
-    set namelistINPUT = namelist.FRM-CA-MX-CO.input 
+if( $Ndomains == 2 ) then
+    set namelistWPS = namelist.default-2dom.wps
+    set namelistINPUT = namelist.default-2dom.input
+endif
+
+if( $Ndomains == 3 ) then
+    set namelistWPS = namelist.default-3dom.wps
+    set namelistINPUT = namelist.default-3dom.input
 endif 
 
 #--INPUT DATA 
@@ -122,6 +117,7 @@ set PRECODEsource = /glade/work/wrfhelp/derecho_pre_compiled_code/
 #-set WPSpath = /glade/scratch/${USER}/wrf-model/PRE_COMPILED_CODE/${WPSversion}/${initrunC}"."$ens"."$cu_para/ 
 set WRFpath = $PRECODE/${WRFversion}/test/em_real/${initrunC}"."$ens"."$cu_para/ 
 set WPSpath = $PRECODE/${WPSversion}/${initrunC}"."$ens"."$cu_para/ 
+
 
 setenv JASPERLIB /glade/u/home/wrfhelp/UNGRIB_LIBRARIES/lib
 setenv JASPERINC /glade/u/home/wrfhelp/UNGRIB_LIBRARIES/include
@@ -524,3 +520,12 @@ if ( $runwrf == 1 ) then
 endif 
 #-------------
 #-------------
+echo "-------------------------------------------"
+echo "Model will be run in the directory below:"
+echo $PRECODE
+echo "-------------------------------------------"
+
+echo "-------------------------------------------"
+echo "Output data (if successful) can be found in:"
+echo $WRFpath
+echo "-------------------------------------------"
