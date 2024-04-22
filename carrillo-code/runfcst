@@ -3,10 +3,11 @@
 cd getreal/
 sh mk3dayFcstDates
 cp dates.txt ../gowrf/
+get.loop.ope.csh
 cd ../gowrf
 
 set user = `whoami`
-set now = `date +"%m-%d-%Y-%T"`
+set now = `date +"%m-%d-%Y-%H.%M.%S"`
 
 if ( $#argv < 1 ) then
     set runcase = $user-$now
