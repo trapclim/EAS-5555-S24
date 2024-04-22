@@ -1,6 +1,6 @@
 #! /bin/csh 
 #
-set files =  dates.loop.5dy.Apr.2024.txt
+set files =  dates.txt
 #----------activation part---------# 
 set PWD = `pwd`
 set USER = `whoami`
