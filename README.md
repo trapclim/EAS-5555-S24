@@ -10,7 +10,7 @@ cd ~/EAS-5555-S24/carrillo-code/
 
 2. If this is the first time you are running the updated `carrillo-code` you can now use one of the following options.
 
-2.a: Run the bash script called `setup-code.sh` like this:
+I) Run the bash script called `setup-code.sh` like this:
 ```
 bash setup-ccode.sh
 ```
@@ -18,7 +18,7 @@ bash setup-ccode.sh
 This will handle adding the `PATH=$PATH:.` and `export PATH` lines to your `.bashrc` and `.bash_profile` files. However, if you run it more than once (or if you've already done this step) it will make a mess of your `.bashrc` and `.bash_profile` scripts. It will also change the permissions of the `.csh` files to make them exexecutables.
 
 
-Alternatively, you can simply edit `.bashrc` and `.bash_profile` manually using nano, emacs, or vim and add the lines above. You can also manually change the permisions of the .csh scripts like this:
+II) Alternatively, you can simply edit `.bashrc` and `.bash_profile` manually using nano, emacs, or vim and add the lines above. You can also manually change the permisions of the .csh scripts like this:
 ```
 chmod +x ./*/*.csh
 chmod +x runfcst
