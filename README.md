@@ -27,6 +27,11 @@ chmod +x runfcst
 
 # Running forecasts:
 ## 1 The easy way:
+Navigate to `EAS-5555-S24/carrillo-code`:
+```
+cd ~/EAS-5555-S24/carrillo-code/
+```
+Then run the script `runfcst` (you might have to first change permissions using `chmod +x runfcst`):
 ```
 runfcst
 ```
